@@ -24,8 +24,8 @@ import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import fel.cvut.cz.model.Member;
-import fel.cvut.cz.service.MemberService;
+import fel.cvut.cz.dao.model.Member;
+import fel.cvut.cz.dao.service.MemberService;
 import fel.cvut.cz.util.Resources;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;

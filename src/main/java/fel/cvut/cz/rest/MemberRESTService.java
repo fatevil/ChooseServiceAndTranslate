@@ -40,9 +40,12 @@ import java.util.logging.Logger;
  */
 @Path("/members")
 @RequestScoped
+@Deprecated
 public class MemberRESTService {
 
     // http://localhost:8080/choose-service-and-translate/rest/members/
+
+    // tohle se používat nebude, protože jsme si řekli, že user management budeme dělat přes websocket
 
 
     @Inject

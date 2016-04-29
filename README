@@ -1,0 +1,47 @@
+Moje představa:
+
+Překladač, kde si člověk vybere překladač, kterým chce přeložit zadaný text. V základní funkcionalitě chceme určitě podporovat:
+
+Google Translation API
+Yandex
+
+Tři úrovně rolí:
+
+Admin - může upravovat blacklist slov, mazat uživatele
+User - může vyhledávat
+PremiumUser - může vyhledávat i slova, která jsou v blacklistu
+
+--------------------------------------
+
+Prezenční vrstvu nechám na Petrovi. 
+
+--------------------------------------
+
+Vnější komunikaci si představuju asi takhle:
+
+Veškerý požadavky na překlad pomocí REST API. Žadný kontrolery. Session a uživatelský změny apod. pomocí WebSocket endpointu.
+
+Bussiness logika: DAO->Service->REST / Endpoint
+
+Model - jenom user system
+
+--------------------------------------
+
+Datová vrstva: je třeba zvážit, jestli použijeme jinej datasource, než ten základní integrovanej ve wildfly. Poslouží to něčemu? Jinak pohoda JPA 2. 
+
+--------------------------------------
+
+Vycházim z těhle Quickstartu:
+
+https://github.com/jboss-developer/jboss-eap-quickstarts
+
+cdi-injection		- Injecty / resourcy
+ejb-security		- nástin zabezpečení
+jaxrs-client		- REST 
+jsonp			- práce s jsonem
+tasks-rs      		- DAO nalepený na REST
+websocket-endpoint
+websocket-hello		- websocket - endpoint - zpracovani JSONu
+cluster-ha-singleton	- clustering?
+
+

@@ -19,12 +19,16 @@ package fel.cvut.cz.backing;
 import fel.cvut.cz.qualifier.GoogleAPI;
 import fel.cvut.cz.qualifier.YandexAPI;
 import fel.cvut.cz.translationservices.TranslateService;
+import fel.cvut.cz.translationservices.TranslationRequest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named("translation")
 public class TranslationBackingBean {
+
+    // nepouziva se, je tu jenom jako hezky priklad pouziti CDI
+
 
     /*
      * Both of these injections is of the same base type: TranslationService, however, CDI is using the qualifiers to help
@@ -40,10 +44,10 @@ public class TranslationBackingBean {
     private TranslateService yandexTranslator;
 
     public String translateWithGoogle(String message, String language) {
-        return googleTranslator.translate(message, language);
+        return googleTranslator.translate(new TranslationRequest(language, message));
     }
 
     public String translateWithYandex(String message, String language) {
-        return yandexTranslator.translate(message, language);
+        return yandexTranslator.translate(new TranslationRequest(language, message));
     }
 }

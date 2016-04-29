@@ -18,6 +18,6 @@ package fel.cvut.cz.translationservices;
 
 public interface TranslateService {
 
-    String translate(String text, String language);
+    String translate(TranslationRequest request);
 
 }

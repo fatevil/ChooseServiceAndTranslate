@@ -18,12 +18,32 @@ package fel.cvut.cz.translationservices;
 
 import fel.cvut.cz.qualifier.YandexAPI;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.validation.Validator;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import java.util.logging.Logger;
+
+@Path("/yandex")
+@RequestScoped
 @YandexAPI
 public class YandexTranslateService implements TranslateService {
 
 
+    @Inject
+    private Logger log;
+    @Inject
+    private Validator validator;
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public String translate(String text, String language) {
-        return null;
+    public String translate(TranslationRequest request) {
+        return "{ \"text\" : \"helloa\"}";
     }
 }

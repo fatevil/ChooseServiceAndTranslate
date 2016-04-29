@@ -45,3 +45,4 @@ websocket-hello		- websocket - endpoint - zpracovani JSONu
 cluster-ha-singleton	- clustering?
 
 
+# poznámka: myslim, že nemá smysl dělat inteface pro DAO, generickou abstraktní třídu a tak, jak jsme zvyklí, protože ten model tu bude minimální

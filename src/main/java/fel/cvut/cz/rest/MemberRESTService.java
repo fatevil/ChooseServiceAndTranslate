@@ -53,6 +53,9 @@ import fel.cvut.cz.dao.service.MemberService;
 @RequestScoped
 public class MemberRESTService {
 
+    // http://localhost:8080/choose-service-and-translate/rest/members/
+
+
     @Inject
     private Logger log;
 

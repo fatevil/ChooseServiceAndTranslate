@@ -23,13 +23,6 @@ import fel.cvut.cz.translationservices.TranslateService;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-/**
- * Simple JSF backing bean, demonstrating CDI injection and qualifiers.
- * <p>
- * Also note, this bean has a name different than the default name.
- *
- * @author Jason Porter
- */
 @Named("translation")
 public class TranslationBackingBean {
 

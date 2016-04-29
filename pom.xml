@@ -16,7 +16,7 @@
     limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fel.cvut.cz</groupId>
@@ -24,7 +24,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>WildFly Quickstarts: choose-service-and-translate</name>
-    <description>A starter Java EE 7 webapp project for use on JBoss WildFly / WildFly, generated from the jboss-javaee6-webapp archetype</description>
+    <description>A starter Java EE 7 webapp project for use on JBoss WildFly / WildFly, generated from the
+        jboss-javaee6-webapp archetype
+    </description>
 
     <url>http://wildfly.org</url>
     <licenses>
@@ -193,6 +195,23 @@
             <groupId>org.jboss.arquillian.protocol</groupId>
             <artifactId>arquillian-protocol-servlet</artifactId>
             <scope>test</scope>
+        </dependency>
+
+
+        <!-- Import the WebSocket API, we use provided scope as the API is included in
+            JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.websocket</groupId>
+            <artifactId>jboss-websocket-api_1.1_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--  Use JSON do parse messages from websocket , we use provided scope as the API is included in
+            JBoss EAP -->
+        <dependency>
+            <groupId>org.jboss.spec.javax.json</groupId>
+            <artifactId>jboss-json-api_1.0_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

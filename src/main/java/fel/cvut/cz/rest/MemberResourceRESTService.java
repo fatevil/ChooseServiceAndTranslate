@@ -42,7 +42,7 @@ import javax.ws.rs.core.Response;
 
 import fel.cvut.cz.data.MemberRepository;
 import fel.cvut.cz.model.Member;
-import fel.cvut.cz.service.MemberRegistration;
+import fel.cvut.cz.service.MemberService;
 
 /**
  * JAX-RS Example
@@ -63,7 +63,7 @@ public class MemberResourceRESTService {
     private MemberRepository repository;
 
     @Inject
-    MemberRegistration registration;
+    MemberService registration;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

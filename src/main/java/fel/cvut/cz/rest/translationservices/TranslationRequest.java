@@ -1,4 +1,4 @@
-package fel.cvut.cz.translationservices;
+package fel.cvut.cz.rest.translationservices;
 
 /**
  * Created by marek on 29.4.16.

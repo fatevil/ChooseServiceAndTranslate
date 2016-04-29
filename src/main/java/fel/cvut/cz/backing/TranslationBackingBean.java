@@ -18,8 +18,8 @@ package fel.cvut.cz.backing;
 
 import fel.cvut.cz.qualifier.GoogleAPI;
 import fel.cvut.cz.qualifier.YandexAPI;
-import fel.cvut.cz.translationservices.TranslateService;
-import fel.cvut.cz.translationservices.TranslationRequest;
+import fel.cvut.cz.rest.translationservices.TranslateService;
+import fel.cvut.cz.rest.translationservices.TranslationRequest;
 
 import javax.inject.Inject;
 import javax.inject.Named;

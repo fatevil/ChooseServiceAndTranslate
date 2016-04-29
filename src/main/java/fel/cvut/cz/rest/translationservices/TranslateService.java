@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fel.cvut.cz.translationservices;
+package fel.cvut.cz.rest.translationservices;
 
 public interface TranslateService {
 

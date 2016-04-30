@@ -43,11 +43,11 @@ public class TranslationBackingBean {
     @YandexAPI
     private TranslateService yandexTranslator;
 
-    public String translateWithGoogle(String message, String language) {
-        return microsoftTranslator.translate(new TranslationRequest(language, message));
+    public String translateWithGoogle(TranslationRequest request) {
+        return microsoftTranslator.translate(request);
     }
 
-    public String translateWithYandex(String message, String language) {
-        return yandexTranslator.translate(new TranslationRequest(language, message));
+    public String translateWithYandex(TranslationRequest request) {
+        return yandexTranslator.translate(request);
     }
 }

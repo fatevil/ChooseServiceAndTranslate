@@ -16,6 +16,8 @@
  */
 package fel.cvut.cz.rest.translationservices;
 
+import com.memetix.mst.language.Language;
+import com.memetix.mst.translate.Translate;
 import fel.cvut.cz.qualifier.MicrosoftAPI;
 
 import javax.enterprise.context.RequestScoped;
@@ -33,17 +35,50 @@ import java.util.logging.Logger;
 @MicrosoftAPI
 public class MicrosoftTranslateService implements TranslateService {
 
+    private final String CLIENT_ID = "12345789741852963";
+    private final String CLIENT_SECRET = "heslonamicrosoftapi123";
+
     @Inject
     private Logger log;
     @Inject
     private Validator validator;
 
+    /*
+    * Example input JSON:
+    * {
+    *    "text" : "Hi there!",
+    *    "languageFrom" : "en",
+    *    "languageTo" : "cs"
+    *  }
+    *
+    *  Output JSON:
+    *
+    *  {
+    *     "text": "Nazdárek!"
+    *  }
+    *
+    * */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public String translate(TranslationRequest request) {
-        return "{ \"text\" : \"helloa\"}";
+
+        Translate.setClientId(CLIENT_ID);
+        Translate.setClientSecret(CLIENT_SECRET);
+
+        String translatedText = null;
+        try {
+            translatedText = Translate.execute(request.getText(),
+                    Language.fromString(request.getLanguageFrom()),
+                    Language.fromString(request.getLanguageTo()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //log.info("Just translated text with Microsoft tranlator!");
+
+        return "{ \"text\" : \"" + translatedText + "\"}";
     }
 
 }

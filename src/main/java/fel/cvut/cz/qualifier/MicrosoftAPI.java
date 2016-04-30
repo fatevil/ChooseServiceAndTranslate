@@ -14,36 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fel.cvut.cz.rest.translationservices;
+package fel.cvut.cz.qualifier;
 
-import fel.cvut.cz.qualifier.GoogleAPI;
+import javax.inject.Qualifier;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.validation.Validator;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import java.util.logging.Logger;
+import static java.lang.annotation.ElementType.*;
 
-@Path("/google")
-@RequestScoped
-@GoogleAPI
-public class GoogleTranslateService implements TranslateService {
-
-    @Inject
-    private Logger log;
-    @Inject
-    private Validator validator;
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    @Override
-    public String translate(TranslationRequest request) {
-        return "{ \"text\" : \"helloa\"}";
-    }
-
+@Qualifier
+@Target({TYPE, METHOD, FIELD, PARAMETER})
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MicrosoftAPI {
 }

@@ -16,7 +16,7 @@
  */
 package fel.cvut.cz.backing;
 
-import fel.cvut.cz.qualifier.GoogleAPI;
+import fel.cvut.cz.qualifier.MicrosoftAPI;
 import fel.cvut.cz.qualifier.YandexAPI;
 import fel.cvut.cz.rest.translationservices.TranslateService;
 import fel.cvut.cz.rest.translationservices.TranslationRequest;
@@ -36,15 +36,15 @@ public class TranslationBackingBean {
      */
 
     @Inject
-    @GoogleAPI
-    private TranslateService googleTranslator;
+    @MicrosoftAPI
+    private TranslateService microsoftTranslator;
 
     @Inject
     @YandexAPI
     private TranslateService yandexTranslator;
 
     public String translateWithGoogle(String message, String language) {
-        return googleTranslator.translate(new TranslationRequest(language, message));
+        return microsoftTranslator.translate(new TranslationRequest(language, message));
     }
 
     public String translateWithYandex(String message, String language) {

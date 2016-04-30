@@ -30,7 +30,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.logging.Logger;
 
-@Path("/google")
+@Path("/microsoft")
 @RequestScoped
 @MicrosoftAPI
 public class MicrosoftTranslateService implements TranslateService {

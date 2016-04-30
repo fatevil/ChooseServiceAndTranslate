@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -14,19 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package fel.cvut.cz.qualifier;
+package fel.cvut.cz.rest.translationservices;
 
-import javax.inject.Qualifier;
-import java.lang.annotation.Documented;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 
-import static java.lang.annotation.ElementType.*;
-
-@Qualifier
-@Target({TYPE, METHOD, FIELD, PARAMETER})
-@Documented
-@Retention(RetentionPolicy.RUNTIME)
-public @interface YandexAPI {
+/**
+ * A class extending {@link Application} and annotated with @ApplicationPath is the Java EE 7 "no XML" approach to activating
+ * JAX-RS.
+ * 
+ * <p>
+ * Resources are served relative to the servlet path specified in the {@link ApplicationPath} annotation.
+ * </p>
+ */
+@ApplicationPath("/rest")
+public class JaxRsActivator extends Application {
+    /* class body intentionally left blank */
 }

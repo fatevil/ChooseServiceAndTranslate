@@ -18,6 +18,7 @@ package fel.cvut.cz.util;
 
 import java.util.logging.Logger;
 
+import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
@@ -37,6 +38,7 @@ import javax.persistence.PersistenceContext;
  * private EntityManager em;
  * </pre>
  */
+ @Dependent
 public class Resources {
 
     @Produces

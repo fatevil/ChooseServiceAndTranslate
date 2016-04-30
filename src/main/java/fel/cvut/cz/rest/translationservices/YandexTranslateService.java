@@ -16,11 +16,8 @@
  */
 package fel.cvut.cz.rest.translationservices;
 
-import fel.cvut.cz.qualifier.YandexAPI;
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.validation.Validator;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -30,20 +27,20 @@ import java.util.logging.Logger;
 
 @Path("/yandex")
 @RequestScoped
-@YandexAPI
 public class YandexTranslateService implements TranslateService {
 
 
     @Inject
     private Logger log;
-    @Inject
-    private Validator validator;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public String translate(TranslationRequest request) {
+
+        log.info("Translation: \"" + request.getText() + "\" : " + request.getLanguageFrom() + " -> " + request.getLanguageTo() + " Yandex translator.");
+
         return "{ \"text\" : \"helloa\"}";
     }
 }

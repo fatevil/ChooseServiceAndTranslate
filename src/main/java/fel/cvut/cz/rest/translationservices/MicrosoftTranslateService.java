@@ -18,11 +18,9 @@ package fel.cvut.cz.rest.translationservices;
 
 import com.memetix.mst.language.Language;
 import com.memetix.mst.translate.Translate;
-import fel.cvut.cz.qualifier.MicrosoftAPI;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.validation.Validator;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -32,7 +30,6 @@ import java.util.logging.Logger;
 
 @Path("/microsoft")
 @RequestScoped
-@MicrosoftAPI
 public class MicrosoftTranslateService implements TranslateService {
 
     private final String CLIENT_ID = "12345789741852963";
@@ -40,8 +37,6 @@ public class MicrosoftTranslateService implements TranslateService {
 
     @Inject
     private Logger log;
-    @Inject
-    private Validator validator;
 
     /*
     * Example input JSON:
@@ -64,6 +59,7 @@ public class MicrosoftTranslateService implements TranslateService {
     @Override
     public String translate(TranslationRequest request) {
 
+
         Translate.setClientId(CLIENT_ID);
         Translate.setClientSecret(CLIENT_SECRET);
 
@@ -76,7 +72,7 @@ public class MicrosoftTranslateService implements TranslateService {
             e.printStackTrace();
         }
 
-        //log.info("Just translated text with Microsoft tranlator!");
+        log.info("Translation: \"" + request.getText() + "\" : " + request.getLanguageFrom() + " -> " + request.getLanguageTo() + " MS translator.");
 
         return "{ \"text\" : \"" + translatedText + "\"}";
     }

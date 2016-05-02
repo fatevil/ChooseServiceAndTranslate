@@ -46,3 +46,12 @@ cluster-ha-singleton	- clustering?
 
 
 # poznámka: myslim, že nemá smysl dělat inteface pro DAO, generickou abstraktní třídu a tak, jak jsme zvyklí, protože ten model tu bude minimální
+
+
+----------------------------------------
+
+Bezpečnost quickstarter + navod / dokumentace
+
+https://hudson.jboss.org/hudson/job/JBoss-AS7-Docs/lastSuccessfulBuild/artifact/guides/developer-getting-started-guide/target/docbook/publish/en-US/html/login.html
+
+https://github.com/karlnicholas/javaee-security-quickstart-archetype
